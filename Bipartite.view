@@ -1,0 +1,495 @@
+<<<<<<<=view-json=
+{
+  "id":"Bipartite",
+  "name":"Bipartite",
+  "category":"Chart",
+  "default":{
+    "jsonClass":"View",
+    "elxType":"View",
+    "vtype":"bundle",
+    "state":"visible",
+    "isContainer":false,
+    "position":{
+      "jsonClass":"Position",
+      "elxType":"Position",
+      "height":"420",
+      "width":"670",
+      "zIndex":"auto"
+    },
+      "data":{
+      "jsonClass":"DataEmbedded",
+      "datasource":{
+        "jsonClass":"DataSource",
+        "name":"initData",
+        "stype":"Data",
+        "desc":"default data",
+        "schema":{
+          "jsonClass":"Schema",
+          "caseSensitive":false,
+          "columns":[
+          {
+            "jsonClass":"SchemaColumn",
+            "name":"Channel",
+            "dtype":"String",
+            "attrs":[{
+              "jsonClass":"PrimaryKey",
+              "name":"PrimaryKey"
+            }]
+          },
+          {
+            "jsonClass":"SchemaColumn",
+            "name":"State",
+            "dtype":"String",
+            "attrs":[{
+              "jsonClass":"PrimaryKey",
+              "name":"PrimaryKey"
+            }]
+          },
+          {
+            "jsonClass":"SchemaColumn",
+            "name":"Sales_Attempts",
+            "dtype":"Long",
+            "attrs":[]
+          },{
+            "jsonClass":"SchemaColumn",
+            "name":"Sales",
+            "dtype":"Long",
+            "attrs":[]
+          }
+          
+          
+          ]
+        },
+        "data":{
+          "jsonClass":"DataRecords",
+          "records":[
+            {
+            "jsonClass":"Record",
+            "fields":[
+            {
+              "jsonClass":"Field",
+              "value":"Lite"
+            },
+            {
+              "jsonClass":"Field",
+              "value":"AL"
+            },
+            {
+              "jsonClass":"Field",
+              "value":"16"
+            },{
+              "jsonClass":"Field",
+              "value":"0"
+            }          ]
+            },
+            {
+            "jsonClass":"Record",
+            "fields":[
+            {
+              "jsonClass":"Field",
+              "value":"Small"
+            },
+            {
+              "jsonClass":"Field",
+              "value":"AL"
+            },
+            {
+              "jsonClass":"Field",
+              "value":"1278"
+            },{
+              "jsonClass":"Field",
+              "value":"4"
+            }          ]
+            }
+            
+            
+                       ]
+            }
+            
+      },
+      "directive":""
+    },
+    "typeinfo":{
+      "jsonClass":"Bundle",
+      "type":"Bipartite",
+      "data":{"channelCol":"Channel", "stateCol":"State", "salesattemptCol":"Sales_Attempts", "salesCol":"Sales"},
+      "chart":{"width":"500","height":"610","centre":"450","margin":{"b":"0","t":"50","l":"170","r":"20"}}
+      }
+   },
+   
+   "includes" : ["/elx/lib/d3.v3.min.js","/elx/lib/biPartite.js"],
+  "edit-section":[{
+    "id":"view",
+    "name":"View"
+  },{
+    "id":"data",
+    "name":"Data"
+  },{
+    "id":"Bipartite",
+    "name":"Bipartite"
+  }]
+}
+========
+<<<<<<<=edit-json=
+{
+	"jsonClass":"ViewSection",
+	"id":"Bipartite",
+	"rows":[
+      	{
+          	"jsonClass":"Row", 
+			"cols":[
+				{
+					"jsonClass":"Label",
+					"id":"typeinfo-height-label",
+					"type":"label",
+					"text":"Chart Height"
+				},
+				{
+					"jsonClass":"Field",
+					"id":"typeinfo-chartHeight",
+					"type":"field",
+					"value":"${typeinfo.chartHight}",
+					"readonly":false
+				}
+			]
+		},
+      	{
+			"jsonClass":"Row", 
+			"cols":[
+				{
+					"jsonClass":"Label",
+					"id":"typeinfo-width-label",
+					"type":"label",
+					"text":"Chart Width"
+				},
+				{
+					"jsonClass":"Field",
+					"id":"typeinfo-chartWidth",
+					"type":"field",
+					"value":"${typeinfo.chartWidth}",
+					"readonly":false
+				}
+			]
+		},,
+      	{
+			"jsonClass":"Row", 
+			"cols":[
+				{
+					"jsonClass":"Label",
+					"id":"typeinfo-centre-label",
+					"type":"label",
+					"text":"Chart centre"
+				},
+				{
+					"jsonClass":"Field",
+					"id":"typeinfo-chartCentre",
+					"type":"field",
+					"value":"${typeinfo.chartCentre}",
+					"readonly":false
+				}
+			]
+		}
+      	{
+          	"jsonClass":"Row",
+            "cols":[
+                {
+                    "jsonClass":"Label",
+                    "id":"typeinfo-channelCol-label",
+                    "type":"label",
+                    "text":"Channel Column"
+                },
+                {
+                    "jsonClass":"SchemaColumnSelect",
+                    "id":"typeinfo-channelCol",
+                    "type":"select-schema-column",
+                    "value":"${typeinfo.channelCol}"
+                }
+            ]
+      	},
+      	{
+          	"jsonClass":"Row",
+            "cols":[
+                {
+                    "jsonClass":"Label",
+                    "id":"typeinfo-stateCol-label",
+                    "type":"label",
+                    "text":"State Column"
+                },
+                {
+                    "jsonClass":"SchemaColumnSelect",
+                    "id":"typeinfo-stateCol",
+                    "type":"select-schema-column",
+                    "value":"${typeinfo.stateCol}"
+                }
+            ]
+      	},
+      	{
+          	"jsonClass":"Row",
+            "cols":[
+                {
+                    "jsonClass":"Label",
+                    "id":"typeinfo-salesattemptCol-label",
+                    "type":"label",
+                    "text":"salesattempt Column"
+                },
+                {
+                    "jsonClass":"SchemaColumnSelect",
+                    "id":"typeinfo-salesattemptCol",
+                    "type":"select-schema-column",
+                    "value":"${typeinfo.salesattemptCol}"
+                }
+            ]
+      	},
+      	{
+          	"jsonClass":"Row",
+            "cols":[
+                {
+                    "jsonClass":"Label",
+                    "id":"typeinfo-salesCol-label",
+                    "type":"label",
+                    "text":"sales Column"
+                },
+                {
+                    "jsonClass":"SchemaColumnSelect",
+                    "id":"typeinfo-salesCol",
+                    "type":"select-schema-column",
+                    "value":"${typeinfo.salesCol}"
+                }
+            ]
+      	},
+        {
+            "jsonClass":"Row",
+            "cols":[
+                {
+                    "jsonClass":"Label",
+                    "id":"typeinfo-marginL-label",
+                    "type":"label",
+                    "text":"Left margin"
+                },
+                {
+                    "jsonClass":"Field",
+                    "id":"typeinfo-marginL",
+                    "type":"field",
+                    "value":"${typeinfo.marginL}",
+					"readonly":false
+                 
+                }
+            ]
+		},
+        {
+            "jsonClass":"Row",
+            "cols":[
+                {
+                    "jsonClass":"Label",
+                    "id":"typeinfo-marginR-label",
+                    "type":"label",
+                    "text":"Right margin"
+                },
+                {
+                    "jsonClass":"Field",
+                    "id":"typeinfo-marginR",
+                    "type":"field",
+                    "value":"${typeinfo.marginR}",
+					"readonly":false
+                 
+                }
+            ]
+		},
+        {
+            "jsonClass":"Row",
+            "cols":[
+                {
+                    "jsonClass":"Label",
+                    "id":"typeinfo-marginT-label",
+                    "type":"label",
+                    "text":"Top margin"
+                },
+                {
+                    "jsonClass":"Field",
+                    "id":"typeinfo-marginT",
+                    "type":"field",
+                    "value":"${typeinfo.marginT}",
+					"readonly":false
+                 
+                }
+            ]
+		},
+        {
+            "jsonClass":"Row",
+            "cols":[
+                {
+                    "jsonClass":"Label",
+                    "id":"typeinfo-marginB-label",
+                    "type":"label",
+                    "text":"Bottom margin"
+                },
+                {
+                    "jsonClass":"Field",
+                    "id":"typeinfo-marginB",
+                    "type":"field",
+                    "value":"${typeinfo.marginB}",
+					"readonly":false
+                 
+                }
+            ]
+		}
+    
+    ]
+	
+}
+========
+<<<<<<<=edit-js=
+elx.bundle.type.Bipartite = {
+
+  	init : function(view) {
+		$("#typeinfo-chartHeight").val(view.typeinfo.chart.height);
+      	$("#typeinfo-chartWidth").val(view.typeinfo.chart.width);
+      $("#typeinfo-chartCentre").val(view.typeinfo.chart.centre);
+      	$("#typeinfo-marginR").val(view.typeinfo.chart.margin.r);
+      	$("#typeinfo-marginL").val(view.typeinfo.chart.margin.l);
+      	$("#typeinfo-marginT").val(view.typeinfo.chart.margin.t);
+      	$("#typeinfo-marginB").val(view.typeinfo.chart.margin.b);
+	},
+
+	validate : function(view) {
+		return true;
+	},
+
+	save : function(view) {
+		var cHeight = $("#typeinfo-chartHeight").val();
+		view.typeinfo.chart.height = cHeight;
+      	var cWidth = $("#typeinfo-chartWidth").val();
+		view.typeinfo.chart.width = cWidth;
+      var cCentre = $("#typeinfo-chartCentre").val();
+		view.typeinfo.chart.centre = cCentre;
+        var channelCol = $("#typeinfo-channelCol").val();
+      	view.typeinfo.data.channelCol = channelCol;
+      	var stateCol = $("#typeinfo-stateCol").val();
+      	view.typeinfo.data.stateCol = stateCol;
+      	var salesattemptCol = $("#typeinfo-salesattemptCol").val();
+      	view.typeinfo.data.salesattemptCol = salesattemptCol;
+      	var salesCol = $("#typeinfo-salesCol").val();
+      	view.typeinfo.data.salesCol = salesCol;
+      
+      	var mLeft =$("#typeinfo-marginL").val();
+    	view.typeinfo.chart.margin.l=mLeft;
+      
+      	var mRight = $("#typeinfo-marginR").val();
+      	view.typeinfo.chart.margin.r=mRight;
+      
+      	var mBottom = $("#typeinfo-marginL").val();
+      	view.typeinfo.chart.margin.l=mBottom;
+      	var mTop = $("#typeinfo-marginT").val();
+      	view.typeinfo.chart.margin.t=mTop;
+    }
+	
+}
+========
+<<<<<<<=view-html=
+<style type='text/css'>
+
+
+svg text{
+	font-size:12px;
+}
+rect{
+	shape-rendering:crispEdges;
+}
+
+</style>
+<div id='chart'></div>
+
+	
+<div class='elx-script'>
+  var div =$("#${id}");
+  
+
+var typeinfo = view.typeinfo;
+  
+ 
+  
+  var rawdata=${code};
+
+   console.log('raw_data',rawdata);
+  
+   var tmp = _.groupBy(rawdata, function(d){ 
+   return d[view.typeinfo.data.stateCol]; 
+   });
+  
+  var tmp2 = {};
+  _.each(tmp, function(t, unit){
+  tmp2[unit] = _.groupBy(t, function(d){
+    return d[view.typeinfo.data.channelCol];
+  });
+});
+  
+  var finalResult = [];
+_.each(tmp2, function(t, unit){
+  _.each(t, function(items, currency){
+    var totalSales_Attempts = 0;
+  	var totalSales =0;
+    _.each(items, function(item){
+      totalSales_Attempts += item[view.typeinfo.data.salesattemptCol]; 
+  totalSales += item[view.typeinfo.data.salesCol];  
+  // should also * currencyCode?
+    });
+    finalResult.push({
+  		"Channel":  currency
+  		,"State" : unit
+     	, "Sales" : totalSales
+      	, "Sales_Attempts" : totalSales_Attempts    
+    });
+  });
+});
+
+console.log('finalResult',finalResult);
+
+
+  console.log('temp2',JSON.stringify(tmp2));
+  
+  sales_data=[];
+  
+  finalResult.forEach(function(d) 
+  {	
+  	local_data=[];
+console.log('d[view.typeinfo.data.stateCol]',d[view.typeinfo.data.stateCol]);
+  	local_data.push(d["Channel"],d["State"], 
+   	parseFloat(d["Sales_Attempts"]),
+  parseFloat(d["Sales"]));
+  
+  sales_data.push(local_data);
+  });
+ 
+console.log('sales_data',sales_data);
+
+var data = [ 
+	{data:bP.partData(sales_data,2), id:'SalesAttempts', header:[view.typeinfo.data.channelCol,view.typeinfo.data.stateCol,view.typeinfo.data.salesattemptCol]},
+	{data:bP.partData(sales_data,3), id:'Sales', header:[view.typeinfo.data.channelCol,view.typeinfo.data.stateCol, view.typeinfo.data.salesCol]}
+];
+console.log('data',data);
+
+ var cfgoptions = view.typeinfo.chart;
+window.dfgoptions={
+  b:cfgoptions.width/36.6, bb:cfgoptions.width/10.67, height:cfgoptions.height, buffMargin:1, minHeight:cfgoptions.height*14/610,
+		c1:[-145,cfgoptions.width*(1/36.6+ 1/10.67-65.6/1100)], c2:[-25, cfgoptions.width*(1/36.6+ 1/10.67+86.975/1100)], c3:[24, cfgoptions.width*(1/36.6+ 1/10.67 + 135.975/1100)], //Column positions of labels.
+		 colors :["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099", "#0099C6"]
+		};
+
+window.xStart=30;
+  
+  bP.draw(data,cfgoptions);
+  
+    	elx.host.setupAutoResize(div, function(w,h){
+  		
+  		if(w !== view.typeinfo.chart.width || h != view.typeinfo.chart.height){
+  			view.typeinfo.chart.height = h;
+  			view.typeinfo.chart.width = w;
+  			 
+		  bP.draw(data,cfgoptions);
+  		}
+    });
+  
+  rotateAxis();
+    
+</div>
+========
