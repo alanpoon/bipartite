@@ -345,6 +345,10 @@ elx.bundle.type.Bipartite = {
 		$("#typeinfo-chartHeight").val(view.typeinfo.chart.height);
       	$("#typeinfo-chartWidth").val(view.typeinfo.chart.width);
       $("#typeinfo-chartCentre").val(view.typeinfo.chart.centre);
+	  $("#typeinfo-stateCol").val(view.typeinfo.data.stateCol);
+	  $("#typeinfo-channelCol").val(view.typeinfo.data.channelCol);
+	  $("#typeinfo-salesattemptCol").val(view.typeinfo.data.salesattemptCol);
+	  $("#typeinfo-salesCol").val(view.typeinfo.data.salesCol);
       	$("#typeinfo-marginR").val(view.typeinfo.chart.margin.r);
       	$("#typeinfo-marginL").val(view.typeinfo.chart.margin.l);
       	$("#typeinfo-marginT").val(view.typeinfo.chart.margin.t);
@@ -463,7 +467,7 @@ console.log('d[view.typeinfo.data.stateCol]',d[view.typeinfo.data.stateCol]);
 console.log('sales_data',sales_data);
 
 var data = [ 
-	{data:bP.partData(sales_data,2), id:'SalesAttempts', header:[view.typeinfo.data.channelCol,view.typeinfo.data.stateCol,view.typeinfo.data.salesattemptCol]},
+	{data:bP.partData(sales_data,2), id:'SalesAttempts', header:['Home Planning Area','Work Planning Area',view.typeinfo.data.salesattemptCol]},
 	{data:bP.partData(sales_data,3), id:'Sales', header:[view.typeinfo.data.channelCol,view.typeinfo.data.stateCol, view.typeinfo.data.salesCol]}
 ];
 console.log('data',data);
@@ -472,7 +476,7 @@ console.log('data',data);
 window.dfgoptions={
   b:cfgoptions.width/36.6, bb:cfgoptions.width/10.67, height:cfgoptions.height, buffMargin:1, minHeight:cfgoptions.height*14/610,
 		c1:[-145,cfgoptions.width*(1/36.6+ 1/10.67-65.6/1100)], c2:[-25, cfgoptions.width*(1/36.6+ 1/10.67+86.975/1100)], c3:[24, cfgoptions.width*(1/36.6+ 1/10.67 + 135.975/1100)], //Column positions of labels.
-		 colors :["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099", "#0099C6"]
+		 colors :["#5D8AA8","#F0F8FF","#E32636","#E52B50","#FFBF00","#A4C639","#8DB600","#FBCEB1","#7FFFD4","#4B5320","#3B444B","#E9D66B","#B2BEB5","#87A96B","#FF9966","#6D351A","#007FFF","#89CFF0","#A1CAF1","#F4C2C2","#FFD12A","#848482","#98777B","#F5F5DC","#3D2B1F","#738678","#318CE7","#FAF0BE","#0000FF","#DE5D83","#79443B","#CC0000","#B5A642","#66FF00","#BF94E4","#C32148","#FF007F","#08E8DE","#D19FE8","#004225","#CD7F32","#964B00","#FFC1CC","#E7FEFF","#F0DC82","#800020","#DEB887","#CC5500","#E97451","#8A3324","#BD33A4","#702963","#536878","#006B3C","#ED872D","#E30022","#A3C1AD","#78866B","#FFEF00","#FF0800","#C41E3A","#00CC99","#960018","#99BADD","#ED9121","#92A1CF","#ACE1AF","#007BA7","#2A52BE","#A0785A","#F7E7CE","#36454F","#DFFF00","#DE3163","#FFB7C5","#CD5C5C","#7B3F00","#FFA700","#98817B","#E34234","#D2691E","#E4D00A","#FBCCE7","#00FF6F","#0047AB","#9BDDFF","#002E63","#8C92AC","#B87333","#FF3800","#FF7F50","#893F45","#FBEC5D","#B31B1B","#6495ED","#FFF8DC","#FFFDD0","#DC143C","#00FFFF","#FFFF31","#F0E130","#00008B","#654321","#5D3954","#A40000","#08457E","#986960","#CD5B45","#008B8B","#B8860B","#013220","#1A2421","#BDB76B","#483C32","#734F96","#8B008B","#003366","#556B2F"]
 		};
 
 window.xStart=30;
